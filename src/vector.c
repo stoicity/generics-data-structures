@@ -51,22 +51,11 @@ int vector_resize(vector_t obj){
     return 0;
 }
 
-int vector_push(vector_t obj, void *data){
-    if(vector_size(obj) >= vector_capacity(obj)){
+int vector_set(vector_t obj, unsigned int index, void *data){
+    while(index >= vector_capacity(obj)){
         if(vector_resize(obj) < 0){
             return -1;
         }
-    }
-
-    memcpy((unsigned char*)obj->memory + vector_size(obj) * vector_data_size(obj), data, vector_data_size(obj));
-    obj->size++;
-    
-    return 0;
-}
-
-int vector_set(vector_t obj, unsigned int index, void *data){
-    if(index >= vector_capacity(obj)){
-        return -1;
     }
 
     memcpy((unsigned char*)obj->memory + index * vector_data_size(obj), data, vector_data_size(obj));
