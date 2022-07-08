@@ -17,19 +17,19 @@ int main(){
   
   /* Append vector at the end */
   int i = 10
-  v.push(v, &i);
+  vector_push(v, &i);
   
   /* Get vector value at the end */
   int *ip;
-  v.back(v, (void**)&ip);
+  vector_back(v, (void**)&ip);
   /* *ip= 10 */
   
-  /* Set vector value at the index 0 */
+  /* Set vector value at the index 1 */
   i = 20;
-  v.set(v, 0, &i);
+  vector_set(v, 1, &i);
   
   /* Get vector value at the index 1 */
-  v.get(v, 1, (void**)&ip));
+  vector_get(v, 1, (void**)&ip));
   /* *ip = 20 */
 }
 
