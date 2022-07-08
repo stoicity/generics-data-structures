@@ -13,5 +13,6 @@ typedef vector_t stack_t;
 #define stack_push(obj, data) vector_push(obj, data)
 #define stack_pop(obj) vector_pop(obj)
 #define stack_top(obj, data) vector_back(obj, data)
+#define stack_size(obj) vector_size(obj)
 
 #endif
